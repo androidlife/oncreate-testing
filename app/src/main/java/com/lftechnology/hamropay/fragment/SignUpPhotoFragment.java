@@ -11,13 +11,12 @@ import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.bumptech.glide.signature.StringSignature;
+import com.lftechnology.hamropay.GlideConfigurator;
 import com.lftechnology.hamropay.R;
 import com.lftechnology.hamropay.db.DbManager;
 import com.lftechnology.hamropay.fragment.base.BaseFragment;
@@ -51,16 +50,9 @@ public class SignUpPhotoFragment extends BaseFragment {
     TextView tvSignUpPhotoTagline;
     @Bind(R.id.iv_camera)
     ImageView ivCamera;
-    @Bind(R.id.iv_logo)
-    ImageView ivLogo;
     @Bind(R.id.civ_profilepic)
     ImageView civProfilepic;
-    @Bind(R.id.tv_sign_up_photo_hint)
-    TextView tvSignUpPhotoHint;
-    @Bind(R.id.btn_continue)
-    Button btnContinue;
-    @Bind(R.id.tv_sign_up_photo_skip)
-    TextView tvSignUpPhotoSkip;
+
 
     private UserInfo userInfo;
     private OnFragmentInteractionListener mListener;
@@ -170,7 +162,7 @@ public class SignUpPhotoFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         tvSignUpPhotoTagline.setText(String.format("Hi %s, upload a photo of yourself.", GeneralUtils.convertToUpperCase(userInfo.getName())));
         if (imagePath != null) {
-            Glide.with(getContext()).load(imagePath).centerCrop().signature(new StringSignature(String.valueOf(System.currentTimeMillis()))).into(civProfilepic);
+            GlideConfigurator.load(context, imagePath).signature(new StringSignature(String.valueOf(System.currentTimeMillis()))).into(civProfilepic);
             ivCamera.setVisibility(View.GONE);
         }
         if (ResourceUtils.getScreenHeight() < 1800) {

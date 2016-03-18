@@ -1,7 +1,6 @@
 package com.lftechnology.hamropay.activities;
 
 import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
@@ -13,12 +12,15 @@ import android.widget.Toast;
 import com.lftechnology.hamropay.R;
 import com.lftechnology.hamropay.activities.base.BaseActivity;
 import com.lftechnology.hamropay.adapter.DashboardPagerAdapter;
+import com.lftechnology.hamropay.model.TabData;
 import com.lftechnology.hamropay.utils.RecyclerViewScrollListener;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.OnClick;
 
-public class DashBoardActivity extends BaseActivity implements RecyclerViewScrollListener.ScrollListener {
+public class DashBoardActivity extends BaseActivity implements RecyclerViewScrollListener.ScrollListener, DashboardPagerAdapter.OnDashBoardTabChangeListener {
 
     @Bind(R.id.viewpager)
     ViewPager viewPager;
@@ -34,6 +36,11 @@ public class DashBoardActivity extends BaseActivity implements RecyclerViewScrol
         return R.layout.activity_dash_board;
     }
 
+    private ArrayList<TabData> tabList = new ArrayList<TabData>() {{
+        add(new TabData("Recent", true, R.drawable.ic_tab_selected_recent, R.drawable.ic_tab_recent));
+        add(new TabData("Contacts", false, R.drawable.ic_tab_selected_contacts, R.drawable.ic_tab_contacts));
+    }};
+
     int tabPosition = 0;
 
     @Override
@@ -45,42 +52,12 @@ public class DashBoardActivity extends BaseActivity implements RecyclerViewScrol
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        viewPager.setAdapter(new DashboardPagerAdapter(getSupportFragmentManager(),
-                DashBoardActivity.this));
+        DashboardPagerAdapter adapter = new DashboardPagerAdapter(getSupportFragmentManager(), tabList);
+        viewPager.setAdapter(adapter);
         slidingTabLayout.setupWithViewPager(viewPager);
+        adapter.initTabs(slidingTabLayout, this);
         controlFabVisibility();
 
-        slidingTabLayout.getTabAt(0).setIcon(R.drawable.ic_tab_selected_recent);
-//        slidingTabLayout.getTabAt(1).setIcon(R.drawable.ic_tab_selected_profile);
-        slidingTabLayout.getTabAt(1).setIcon(R.drawable.ic_tab_selected_contacts);
-//        slidingTabLayout.getTabAt(3).setIcon(R.drawable.ic_tab_selected_settings);
-
-        slidingTabLayout.getTabAt(0).getIcon().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN);
-//        slidingTabLayout.getTabAt(1).getIcon().setColorFilter(Color.parseColor("#a8a8a8"), PorterDuff.Mode.SRC_IN);
-        slidingTabLayout.getTabAt(1).getIcon().setColorFilter(Color.parseColor("#a8a8a8"), PorterDuff.Mode.SRC_IN);
-//        slidingTabLayout.getTabAt(3).getIcon().setColorFilter(Color.parseColor("#a8a8a8"), PorterDuff.Mode.SRC_IN);
-
-
-        slidingTabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                tabPosition = tab.getPosition();
-
-                controlFabVisibility();
-                tab.getIcon().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN);
-                viewPager.setCurrentItem(tab.getPosition());
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-                tab.getIcon().setColorFilter(Color.parseColor("#a8a8a8"), PorterDuff.Mode.SRC_IN);
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
 
     }
 
@@ -116,5 +93,12 @@ public class DashBoardActivity extends BaseActivity implements RecyclerViewScrol
     @Override
     public void onScrolled(boolean favVisibility) {
         floatingActionButton.setVisibility(favVisibility ? View.VISIBLE : View.INVISIBLE);
+    }
+
+    @Override
+    public void onDashboardTabChanged(int position) {
+        tabPosition = position;
+        controlFabVisibility();
+        viewPager.setCurrentItem(position);
     }
 }

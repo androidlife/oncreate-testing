@@ -18,4 +18,7 @@
     <color name="circle_border_color_purple">#aa9013fe</color>
     <color name="circle_border_color_orange">#ffbe3d</color>
 
+    <color name="tab_selected_color">#ffffff</color>
+    <color name="tab_unselected_color">#a8a8a8</color>
+
 </resources>

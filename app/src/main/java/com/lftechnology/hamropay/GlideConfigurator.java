@@ -96,7 +96,7 @@ public class GlideConfigurator implements GlideModule {
                 borderPaint.setAntiAlias(true);
                 canvas.drawCircle(r, r, r, borderPaint);
             }
-            canvas.drawCircle(r, r, r - 10, paint);
+            canvas.drawCircle(r, r, borderColor != 0 ? r - 10 : r, paint);
 
             return result;
         }

@@ -28,7 +28,6 @@ import butterknife.OnClick;
 public class SignUpOthersFragment extends BaseFragment {
     private static final String USER_INFO = "user_info";
 
-    private UserInfo userInfo;
 
     private OnFragmentInteractionListener mListener;
     private Context context;
@@ -52,13 +51,7 @@ public class SignUpOthersFragment extends BaseFragment {
         return fragment;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            userInfo = getArguments().getParcelable(USER_INFO);
-        }
-    }
+
 
     @Override
     protected int getLayout() {

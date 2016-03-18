@@ -8,9 +8,7 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.lftechnology.hamropay.R;
@@ -27,7 +25,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -241,7 +238,7 @@ public class SignUpDetailFragment extends BaseFragment {
 
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(context)
-                        .setSmallIcon(R.mipmap.ic_launcher)
+                        .setSmallIcon(R.drawable.ic_stat_name)
                         .setContentTitle(phoneNumber)
                         .setContentText(message);
 
@@ -252,17 +249,5 @@ public class SignUpDetailFragment extends BaseFragment {
         mListener.onFragmentInteraction(userInfo, Constants.NUMBER_VERIFICATION_FRAGMENT);
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        ButterKnife.bind(this, rootView);
-        return rootView;
-    }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
 }

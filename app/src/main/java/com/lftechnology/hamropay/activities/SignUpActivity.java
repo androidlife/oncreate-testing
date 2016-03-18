@@ -29,7 +29,7 @@ public class SignUpActivity extends BaseActivity implements OnFragmentInteractio
     @Override
     protected void onResume() {
         super.onResume();
-        
+        //currentTag = Constants.SIGN_UP_PHOTO_FRAGMENT;
         onFragmentInteraction(userInfo, currentTag);
 
     }
