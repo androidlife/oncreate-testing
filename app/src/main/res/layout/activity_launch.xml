@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlueGreyBackground"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_launch_padding"
+    tools:context=".activities.LaunchActivity">
+
+    <TextView
+        android:id="@+id/tv_welcome"
+        style="@style/AppTheme.TextView.Big"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="@dimen/activity_launch_margin_top"
+        android:gravity="center"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:text="@string/welcome_text" />
+
+    <ImageView
+        android:layout_width="@dimen/activity_launch_icon_size"
+        android:layout_height="@dimen/activity_launch_icon_size"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/ic_home_logo" />
+
+    <TextView
+        android:id="@+id/tv_tagline"
+        style="@style/AppTheme.TextView.Tagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/welcome_tagline" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="35dp"
+        android:orientation="vertical"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/AppTheme.TextView.BlueGrey"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center|bottom"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_corner"
+            android:elevation="6dp"
+            android:text="@string/welcome_login_text"
+            android:textAllCaps="true"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_sign_up"
+            style="@style/AppTheme.TextView.Big"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:text="or Sign up for free!"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,43 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.0-alpha1'
+        classpath 'com.canelmas.let:let-plugin:0.1.9'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    compileSdkVersion = 23
+    buildToolsVersion = "23.0.2"
+    appCompatVersion = "23.1.1"
+    applicationId = "com.lftechnology.hamropay"
+    minSdkVersion = 21
+    targetSdkVersion = 23
+    versionCode = 1
+    versionName = "0.1"
+    glideVersion = "3.6.1"
+    timberVersion = "3.1.0"
+    butterknifeVersion = "7.0.1"
+    eventbusVersion = "2.4.0"
+    realmVersion="0.87.4"
+    gsonVersion="2.6.1"
+}

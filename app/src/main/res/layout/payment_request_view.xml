@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="50dp"
+        android:padding="10dp">
+
+        <TextView
+            android:fontFamily="sans-serif"
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anisha requested a \npayment from you."
+            android:textColor="#5b5c59" />
+
+        <TextView
+            android:id="@+id/tv_request_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:textColor="#202340"
+            android:fontFamily="sans-serif-light"
+            android:textSize="22sp" />
+
+        <View
+            android:id="@+id/view_divider"
+            android:layout_width="200dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/tv_request_amount"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/black"
+            android:padding="20dp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_divider"
+            android:minHeight="42dp">
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+            <Button
+                android:layout_marginLeft="10dp"
+                android:id="@+id/btn_accept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Accept"
+                android:textColor="#38b5e6" />
+
+            <Button
+                android:id="@+id/btn_decline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/btn_accept"
+                android:background="@android:color/transparent"
+                android:text="Decline"
+                android:textColor="#e64a19" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rl_container"
+        android:layout_below="@+id/rl_container"
+        android:layout_marginLeft="10dp"
+        android:textColor="#9b9b9b"
+        android:textSize="10sp" />
+
+</merge>

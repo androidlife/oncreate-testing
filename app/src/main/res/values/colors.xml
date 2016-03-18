@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#607d8b</color>
+    <color name="colorPrimaryDark">#324148</color>
+    <color name="colorAccent">#9013fe</color>
+    <color name="windowBackground">#ffffff</color>
+    <color name="colorPrimaryText">#9b9b9b</color>
+
+    <color name="storeTypeColor">#9013fe</color>
+    <color name="white">#ffffff</color>
+    <color name="off_white">#85ffffff</color>
+    <color name="colorBlueGreyBackground">#607d8b</color>
+    <color name="warmGrey">#9b9b9b</color>
+    <color name="brownishGrey">#666666</color>
+    <color name="blueGrey">#607d8b</color>
+    <color name="mediumGrey">#5b5c59</color>
+
+    <color name="circle_border_color_purple">#aa9013fe</color>
+    <color name="circle_border_color_orange">#ffbe3d</color>
+
+</resources>

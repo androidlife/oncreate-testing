@@ -1,0 +1,70 @@
+<resources>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_splash">SplashScreen</string>
+    <string name="app_name">HamroPay</string>
+
+    <!-- launch screen -->
+    <string name="welcome_text">HamroPay is the fun new way to send and receive money.</string>
+    <string name="welcome_tagline">Nepal ma baneko.</string>
+    <string name="welcome_login_text">Start sending money</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+
+    <!-- sign up -->
+    <string name="signup_tagline">Lets get you started.</string>
+    <string name="signup_hint_name">What is your name?</string>
+    <string name="signup_hint_phone">Your Phone number</string>
+    <string name="signup_hint_email">What is your email address? (Optional)</string>
+    <string name="signup_button">Continue</string>
+    <string name="signup_photo_hint">Select a photo from the library or take a new photo from camera.</string>
+    <string name="signup_others_tagline">HamroPay works great when you have friends and have a valid bank/credit card account connected.</string>
+    <string name="signup_add_credit_card">Add a credit or debit card</string>
+    <string name="signup_add_bank">Add a bank account</string>
+    <string name="signup_search_friends">Search for friends</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="number_verification_msg">Please enter the verification code.</string>
+    <string name="skip_this">Skip this for now</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_bank_dialog">You do not have a bank account from where you can send money from.\n \n Please add a bank account.</string>
+    <string name="add_bank">Add a Bank</string>
+    <string name="bank">Bank</string>
+    <string name="branch">branch</string>
+    <string name="not_empty">" cannot be empty"</string>
+    <string name="name">" name"</string>
+    <string name="account">Account</string>
+    <string name="number">" Number"</string>
+    <string name="holder">" Holder"</string>
+    <string name="search_user">Search for a User</string>
+    <string name="invite">Invite </string>
+    <string name="invite_friend">Invite a Friend</string>
+    <string name="alternately_could">Alternately, you could also</string>
+    <string name="send_money">SEND MONEY</string>
+    <string name="request_money">REQUEST MONEY</string>
+    <string name="send_message">SEND MESSAGE</string>
+    <string name="send_invitation">SEND INVITATION</string>
+    <string name="enter_number">Enter a Phone Number</string>
+    <string name="message">Message</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="standard_rate">* Standard SMS rate will apply</string>\
+    <string name="error_loading_db_from_assets">Unable to load the database from assets</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="settings_makehost">Make this user host</string>
+    <string name="settings_host_heading">Connectivity</string>
+
+    <string name="hint_select_bank">Please select a bank</string>
+    <string name="hint_select_bank_location">Please select a branch</string>
+
+    <string name="chat_sent_request_info">You requested a payment.</string>
+    <string name="dashboard_no_transaction">There are no transaction \n right now</string>
+    <string name="dashboard_no_transaction_hint">You can initiate your first\ntransaction from here.</string>
+    <string name="share_transaction">Share a transaction with</string>
+    <string name="make_transaction">Make a payment to </string>
+    <string name="make_payment">MAKE A PAYMENT</string>
+    <string name="connect_bank">Connect Bank</string>
+    <string name="add_bank_secure_msg">* You are now making a secured connection to your online banking. We do not store or share your login information.</string>
+    <!--<string name="barcode_hint">Place the code in the center of the square \nIt will be scanned automatically.</string>-->
+    <string name="barcode_hint">Place the code within the frame to scan users and \n initiate transaction.</string>
+</resources>

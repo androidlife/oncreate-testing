@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#efeff4"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:padding="7dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_plus_closed" />
+
+        <ImageView
+            android:id="@+id/iv_send_payment"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_send_gray" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/iv_request_payment"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/iv_send_payment"
+            android:src="@drawable/ic_receive_purple" />
+
+        <ImageView
+            android:id="@+id/iv_send_message"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/iv_request_payment"
+            android:src="@drawable/ic_arrow_purple" />
+
+        <EditText
+            android:id="@+id/edt_send_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/iv_send_message"
+            android:layout_toRightOf="@+id/iv_add"
+            android:gravity="center_vertical"
+            android:hint="Send Message"
+            android:maxLines="3"
+            android:minHeight="56dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="#9b9b9b" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ll_attach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:weightSum="3">
+
+            <ImageView
+                android:id="@+id/iv_attach"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:scaleType="center"
+                android:src="@drawable/ic_attach" />
+
+            <ImageView
+                android:id="@+id/iv_share_sticker"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:padding="32dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_share_stickers" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:id="@+id/iv_user_location"
+                android:scaleType="center"
+                android:src="@drawable/ic_location" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
+
+
+

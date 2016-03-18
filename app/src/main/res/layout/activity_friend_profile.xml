@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.InitiateTransactionActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5">
+
+        <ImageView
+            android:id="@+id/img_profile_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_share_transaction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/share_transaction"
+        android:textColor="@color/warmGrey"
+        android:textSize="@dimen/text_size_sub_heading_1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin">
+
+
+        <RelativeLayout
+            android:id="@+id/rl_send_money"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:background="@drawable/rounded_corner_bluegrey_button"
+            android:gravity="center"
+            android:padding="@dimen/normal_margin">
+
+            <ImageView
+                android:id="@+id/img_send_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/ic_send_white" />
+
+            <TextView
+                android:id="@+id/txt_send_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_toRightOf="@id/img_send_money"
+                android:padding="@dimen/normal_margin"
+                android:text="@string/send_money"
+                android:textColor="@android:color/white" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_request_money"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:background="@drawable/rounded_corner_stroked"
+            android:gravity="center"
+            android:padding="@dimen/normal_margin">
+
+            <ImageView
+                android:id="@+id/img_request_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/ic_receive_white"
+                android:tint="@color/blueGrey" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/img_request_money"
+                android:padding="@dimen/normal_margin"
+                android:text="@string/request_money"
+                android:textColor="@color/blueGrey" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_send_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:padding="@dimen/normal_margin"
+            android:text="@string/send_message"
+            android:textColor="@color/blueGrey" />
+
+    </LinearLayout>
+
+</LinearLayout>

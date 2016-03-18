@@ -1,0 +1,117 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBlueGreyBackground"
+    android:padding="@dimen/activity_vertical_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:isScrollContainer="false"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/logo_width"
+            android:layout_height="@dimen/logo_height"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/ic_home_logo" />
+
+        <TextView
+            style="@style/AppTheme.TextView.Big"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="@string/signup_tagline" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="75dp"
+        android:orientation="vertical"
+        android:weightSum="4">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/wrapper_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:textColorHint="@color/off_white"
+            app:hintTextAppearance="@style/AppTheme.TextAppearance.TextInputLayout">
+
+            <EditText
+                android:id="@+id/ed_user_name"
+                style="@style/AppTheme.TextView.Big"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/signup_hint_name"
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/wrapper_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:textColorHint="@color/off_white"
+            app:hintTextAppearance="@style/AppTheme.TextAppearance.TextInputLayout">
+
+            <EditText
+                android:id="@+id/ed_user_email"
+                style="@style/AppTheme.TextView.Big"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/signup_hint_email"
+                android:inputType="textEmailAddress"
+                android:textSize="20sp" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/wrapper_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:textColorHint="@color/off_white"
+            app:hintTextAppearance="@style/AppTheme.TextAppearance.TextInputLayout">
+
+            <EditText
+                android:id="@+id/ed_user_phone"
+                style="@style/AppTheme.TextView.Big"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/signup_hint_phone"
+                android:inputType="number"
+                android:maxLength="10"
+                android:textSize="20sp" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_detail_continue"
+            style="@style/AppTheme.TextView.BlueGrey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_corner"
+            android:elevation="6dp"
+            android:text="@string/signup_button"
+            android:textAllCaps="true"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</LinearLayout>

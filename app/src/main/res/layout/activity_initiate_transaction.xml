@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".activities.InitiateTransactionActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <FrameLayout
+            android:id="@+id/fl_barcode_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@string/alternately_could"
+            android:textColor="@color/warmGrey"
+            android:textSize="@dimen/text_size_title" />
+
+
+        <Button
+            android:id="@+id/btn_search_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/rounded_corner_bluegrey_button"
+            android:gravity="center"
+            android:padding="@dimen/normal_margin"
+            android:text="@string/search_user"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_invite_friend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/rounded_corner_stroked"
+            android:gravity="center"
+            android:padding="@dimen/normal_margin"
+            android:text="@string/invite_friend"
+            android:textColor="@color/blueGrey" />
+
+    </RelativeLayout>
+
+</LinearLayout>

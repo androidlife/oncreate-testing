@@ -1,0 +1,51 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="logo_width">120dp</dimen>
+    <dimen name="logo_height">120dp</dimen>
+    <dimen name="activity_launch_padding">30dp</dimen>
+    <dimen name="activity_launch_margin_top">75dp</dimen>
+    <dimen name="activity_launch_icon_size">144dp</dimen>
+    <dimen name="normal_margin">8dp</dimen>
+
+    <!--text sizes-->
+    <!--these are arranged according to google typography guidelines-->
+    <!--English and English-like scripts-->
+    <dimen name="text_size_title">20sp</dimen>
+    <dimen name="text_size_sub_heading_1">16sp</dimen>
+    <dimen name="text_size_sub_heading_2">18sp</dimen>
+    <dimen name="text_size_heading">24sp</dimen>
+    <dimen name="text_size_body">14sp</dimen>
+    <dimen name="text_size_caption">12sp</dimen>
+    <dimen name="text_size_button_all_caps">14sp</dimen>
+    <dimen name="text_size_display_1">34sp</dimen>
+    <dimen name="text_size_display_2">45sp</dimen>
+    <dimen name="text_size_display_3">56sp</dimen>
+    <dimen name="text_size_display_4">112sp</dimen>
+    <dimen name="margin_medium">15dp</dimen>
+
+    <!--Material design dimens-->
+    <dimen name="dimen_0x">0dp</dimen>
+    <dimen name="dimen_1x">8dp</dimen>
+    <dimen name="dimen_2x">16dp</dimen>
+    <dimen name="dimen_3x">24dp</dimen>
+    <dimen name="dimen_4x">32dp</dimen>
+    <dimen name="dimen_5x">40dp</dimen>
+    <dimen name="dimen_6x">48dp</dimen>
+    <dimen name="dimen_7x">56dp</dimen>
+    <dimen name="dimen_8x">64dp</dimen>
+    <dimen name="dimen_9x">72dp</dimen>
+    <dimen name="dimen_10x">80dp</dimen>
+    <dimen name="dimen_11x">88dp</dimen>
+    <dimen name="dimen_12x">96dp</dimen>
+    <dimen name="dimen_19x">152dp</dimen>
+    <dimen name="dimen_20x">160dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+
+    <dimen name="stroke_width">35dp</dimen>
+    <dimen name="min_dimen">180dp</dimen>
+
+    <dimen name="circle_border_width">1dp</dimen>
+</resources>
