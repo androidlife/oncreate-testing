@@ -68,4 +68,6 @@ public class PrefManager {
     public long getRegisteredUserId() {
         return sharedPreferences.getLong(USER_ID, -1);
     }
+
+
 }
