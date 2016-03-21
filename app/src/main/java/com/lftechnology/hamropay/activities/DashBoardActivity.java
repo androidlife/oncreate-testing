@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.OnClick;
 
-public class DashBoardActivity extends BaseActivity implements RecyclerViewScrollListener.ScrollListener, DashboardPagerAdapter.OnDashBoardTabChangeListener {
+public class DashBoardActivity extends BaseActivity implements RecyclerViewScrollListener.ScrollListener {
 
     @Bind(R.id.viewpager)
     ViewPager viewPager;
@@ -55,10 +55,44 @@ public class DashBoardActivity extends BaseActivity implements RecyclerViewScrol
         DashboardPagerAdapter adapter = new DashboardPagerAdapter(getSupportFragmentManager(), tabList);
         viewPager.setAdapter(adapter);
         slidingTabLayout.setupWithViewPager(viewPager);
-        adapter.initTabs(slidingTabLayout, this);
+        initTabBehaviour();
         controlFabVisibility();
 
 
+    }
+
+    private void initTabBehaviour() {
+        for (int i = 0; i < slidingTabLayout.getTabCount(); i++) {
+            TabLayout.Tab tab = slidingTabLayout.getTabAt(i);
+            TabData tabData = tabList.get(i);
+            tab.setIcon(tabData.selected ? tabList.get(i).selectedDrawableId : tabList.get(i).unselectedDrawableId);
+        }
+        slidingTabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                int tabPosition = tab.getPosition();
+                tabList.get(tabPosition).selected = true;
+                tab.setIcon(tabList.get(tabPosition).selectedDrawableId);
+                onDashboardTabChanged(tabPosition);
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                tabList.get(tab.getPosition()).selected = false;
+                tab.setIcon(tabList.get(tab.getPosition()).unselectedDrawableId);
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+    }
+
+    public void onDashboardTabChanged(int position) {
+        tabPosition = position;
+        controlFabVisibility();
+        viewPager.setCurrentItem(position);
     }
 
     private void controlFabVisibility() {
@@ -95,10 +129,5 @@ public class DashBoardActivity extends BaseActivity implements RecyclerViewScrol
         floatingActionButton.setVisibility(favVisibility ? View.VISIBLE : View.INVISIBLE);
     }
 
-    @Override
-    public void onDashboardTabChanged(int position) {
-        tabPosition = position;
-        controlFabVisibility();
-        viewPager.setCurrentItem(position);
-    }
+
 }
