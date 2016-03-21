@@ -65,5 +65,4 @@ public class SignUpActivity extends BaseActivity implements OnFragmentInteractio
         }
     }
 
-
 }
