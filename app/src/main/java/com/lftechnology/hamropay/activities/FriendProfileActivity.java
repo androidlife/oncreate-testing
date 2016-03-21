@@ -1,5 +1,6 @@
 package com.lftechnology.hamropay.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -49,6 +50,8 @@ public class FriendProfileActivity extends BaseActivity {
     TextView txtShareTransaction;
 
     User selectedUser;
+
+    public static String SELECTED_USER_ID = "selectedUserId";
 
     @Override
     protected int getLayoutId() {
@@ -116,6 +119,12 @@ public class FriendProfileActivity extends BaseActivity {
         }
 
 
+    }
+
+    public static Intent launchActivity(Context context, long userId) {
+        Intent intent = new Intent(context, FriendProfileActivity.class);
+        intent.putExtra(SELECTED_USER_ID, userId);
+        return intent;
     }
 
     /**

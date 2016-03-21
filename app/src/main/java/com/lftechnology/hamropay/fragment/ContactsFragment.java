@@ -67,11 +67,7 @@ public class ContactsFragment extends BaseFragment {
         contactsSlidingTabLayout.setupWithViewPager(contactsViewPager);
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        contactsPagerAdapter.removeAllFragments();
-    }
+
 
     @Override
     protected int getLayout() {

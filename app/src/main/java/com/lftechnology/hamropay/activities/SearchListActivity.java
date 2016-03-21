@@ -1,6 +1,5 @@
 package com.lftechnology.hamropay.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -17,13 +16,9 @@ import com.lftechnology.hamropay.activities.base.BaseActivity;
 import com.lftechnology.hamropay.adapter.FriendProfileAdapter;
 import com.lftechnology.hamropay.db.DbManager;
 import com.lftechnology.hamropay.db.models.User;
-import com.lftechnology.hamropay.utils.Extras;
-
-import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
-import timber.log.Timber;
 import butterknife.Bind;
 import butterknife.OnClick;
 
@@ -92,12 +87,7 @@ public class SearchListActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 User selectedUser = (User) lv.getItemAtPosition(position);
-                Timber.d("Selected user name =%s", selectedUser.getUserName());
-                Bundle params = new Bundle();
-                params.putParcelable(Extras.SELECTED_USER, Parcels.wrap(User.class, selectedUser));
-                Intent startProfile = new Intent(SearchListActivity.this, FriendProfileActivity.class);
-                startProfile.putExtras(params);
-                startActivity(startProfile);
+                startActivity(FriendProfileActivity.launchActivity(SearchListActivity.this, selectedUser.getUserId()));
 
             }
         });

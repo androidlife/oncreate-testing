@@ -30,20 +30,6 @@ public class ContactsPagerAdapter extends FragmentStatePagerAdapter {
         return PAGE_COUNT;
     }
 
-    public void removeAllFragments() {
-//        try {
-//            if (fm != null) {
-//                List<Fragment> lists = fm.getFragments();
-//                for (Fragment fragment : lists) {
-//                    if (fragment instanceof ContactBaseFragment)
-//                        fm.beginTransaction().remove(fragment).commit();
-//                }
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-
-    }
 
     @Override
     public Fragment getItem(int position) {
