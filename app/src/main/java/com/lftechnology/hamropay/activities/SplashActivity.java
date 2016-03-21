@@ -31,11 +31,6 @@ public class SplashActivity extends BaseActivity implements CircleLogoLoader.OnA
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(true){
-            startActivity(new Intent(this,DashBoardActivity.class));
-            finish();
-            return;
-        }
         initPermission();
     }
 

@@ -68,7 +68,7 @@
             android:textColorHint="@color/off_white"
             app:hintTextAppearance="@style/AppTheme.TextAppearance.TextInputLayout">
 
-            <EditText
+            <AutoCompleteTextView
                 android:id="@+id/ed_user_email"
                 style="@style/AppTheme.TextView.Big"
                 android:layout_width="match_parent"

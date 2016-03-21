@@ -1,14 +1,22 @@
 package com.lftechnology.hamropay.fragment;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.PermissionChecker;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
 
 import com.lftechnology.hamropay.R;
@@ -21,8 +29,10 @@ import com.lftechnology.hamropay.utils.GeneralUtility;
 import com.lftechnology.hamropay.utils.GeneralUtils;
 import com.lftechnology.hamropay.utils.ResourceUtils;
 
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.regex.Pattern;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -46,6 +56,8 @@ public class SignUpDetailFragment extends BaseFragment {
     TextInputLayout wrapperPhone;
     @Bind(R.id.ll_form)
     LinearLayout llForm;
+    @Bind(R.id.ed_user_email)
+    AutoCompleteTextView userEmail;
 
     private UserInfo userInfo;
 
@@ -137,15 +149,31 @@ public class SignUpDetailFragment extends BaseFragment {
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
         if (ResourceUtils.getScreenHeight() < 1800) {
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
 
             layoutParams.setMargins(0, ResourceUtils.dpToPixels(15), 0, 0);
             llForm.setLayoutParams(layoutParams);
+        }
+
+        if (ContextCompat.checkSelfPermission(context, android.Manifest.permission.GET_ACCOUNTS) ==
+                PermissionChecker.PERMISSION_GRANTED) {
+            Pattern emailPattern = Patterns.EMAIL_ADDRESS;
+            Account[] accounts = AccountManager.get(context).getAccounts();
+            ArrayList<String> emailNames = new ArrayList<>();
+            for (Account account : accounts) {
+                if (emailPattern.matcher(account.name).matches() && !emailNames.contains(account.name))
+                    emailNames.add(account.name);
+            }
+            if (emailNames.size() > 0) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(context,
+                        android.R.layout.simple_dropdown_item_1line, emailNames);
+                userEmail.setAdapter(adapter);
+            }
+
         }
 
         //
@@ -173,6 +201,7 @@ public class SignUpDetailFragment extends BaseFragment {
         });
     }
 
+
     private void validateName() {
         userName = wrapperUsername.getEditText().getText().toString();
         if (TextUtils.isEmpty(userName)) {
@@ -187,7 +216,7 @@ public class SignUpDetailFragment extends BaseFragment {
 
     private void validatePhone() {
         phoneNumber = wrapperPhone.getEditText().getText().toString();
-        System.out.println("Validation "+GeneralUtils.numberValidation(phoneNumber));
+        System.out.println("Validation " + GeneralUtils.numberValidation(phoneNumber));
         if (TextUtils.isEmpty(phoneNumber)) {
             validPhone = false;
             wrapperPhone.setError("Please enter a phone number.");

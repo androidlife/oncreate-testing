@@ -170,7 +170,7 @@ public abstract class BaseActivity extends AppCompatActivity implements RuntimeP
     }
 
     //start with permission check
-    @AskPermission({Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA})
+    @AskPermission({Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA, Manifest.permission.GET_ACCOUNTS})
     public void initPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
                 == PermissionChecker.PERMISSION_GRANTED &&

@@ -19,8 +19,6 @@ import com.bumptech.glide.load.engine.cache.LruResourceCache;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
 import com.bumptech.glide.module.GlideModule;
 
-import timber.log.Timber;
-
 /**
  * Created by laaptu on 3/18/16.
  */
@@ -68,7 +66,6 @@ public class GlideConfigurator implements GlideModule {
             super(context);
             this.path = path;
             this.borderColor = borderColor;
-            Timber.d("BorderColor =%d", borderColor);
         }
 
         @Override
