@@ -13,21 +13,18 @@ import com.lftechnology.hamropay.fragment.ServicesFragment;
  * Created by rajesh on 2/16/16.
  */
 public class ContactsPagerAdapter extends FragmentStatePagerAdapter {
-    final int PAGE_COUNT = 3;
     private String tabTitles[] = new String[]{"FREQUENTS", "ALL CONTACTS", "SERVICES"};
-    private Context context;
 
     private FragmentManager fm;
 
     public ContactsPagerAdapter(FragmentManager fm, Context context) {
         super(fm);
         this.fm = fm;
-        this.context = context;
     }
 
     @Override
     public int getCount() {
-        return PAGE_COUNT;
+        return tabTitles.length;
     }
 
 

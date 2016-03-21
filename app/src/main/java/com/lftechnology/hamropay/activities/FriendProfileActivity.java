@@ -11,9 +11,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+import com.lftechnology.hamropay.GlideConfigurator;
 import com.lftechnology.hamropay.R;
 import com.lftechnology.hamropay.activities.base.BaseActivity;
+import com.lftechnology.hamropay.db.DbManager;
 import com.lftechnology.hamropay.db.models.Transaction;
 import com.lftechnology.hamropay.db.models.User;
 import com.lftechnology.hamropay.model.Constants;
@@ -23,7 +24,6 @@ import org.parceler.Parcels;
 
 import butterknife.Bind;
 import butterknife.OnClick;
-import timber.log.Timber;
 
 
 /**
@@ -52,6 +52,7 @@ public class FriendProfileActivity extends BaseActivity {
     User selectedUser;
 
     public static String SELECTED_USER_ID = "selectedUserId";
+    private long selectedUserId = 0;
 
     @Override
     protected int getLayoutId() {
@@ -67,20 +68,23 @@ public class FriendProfileActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        selectedUser = Parcels.unwrap(getIntent().getParcelableExtra(Extras.SELECTED_USER));
-        setToolBarTitle(selectedUser.getUserName());
-        setTextFromUserType(selectedUser.getUserName(), selectedUser.getType());
+        selectedUserId = getIntent().getLongExtra(SELECTED_USER_ID, 0);
 
-        Timber.d("Selected User @ Proife =%s", selectedUser.getType());
 
-        Glide.with(this)
-                .load(Constants.ASSETS_IMAGE_DIRECTORY + selectedUser.getLocalPhoto())
-                .placeholder(R.drawable.default_image)
-                .error(R.drawable.default_image)
-                .centerCrop()
-                .dontAnimate()
-                .into(imgProfileImage);
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (selectedUser == null && selectedUserId > 0) {
+            selectedUser = DbManager.getInstance().getSelectedUserById(selectedUserId);
+            setToolBarTitle(selectedUser.getUserName());
+            setTextFromUserType(selectedUser.getUserName(), selectedUser.getType());
+            GlideConfigurator.load(this, Constants.ASSETS_IMAGE_DIRECTORY + selectedUser.getLocalPhoto())
+                    .placeholder(R.drawable.default_image)
+                    .error(R.drawable.default_image)
+                    .into(imgProfileImage);
+        }
     }
 
     @Override
